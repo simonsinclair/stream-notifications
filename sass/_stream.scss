@@ -1,0 +1,49 @@
+// _stream.scss
+//
+
+// z-index levels
+$l1: 10;
+$l2: 20;
+
+.stream {
+  background-color: #FFF;
+  overflow: hidden;
+  position: relative;
+}
+
+.stream__header {
+  position: absolute;
+  width: 100%;
+  z-index: $l1;
+}
+  .stream__title {
+    @extend .clearfix;
+    background-color: #DDD;
+  }
+    .stream__settings {
+      background-color: transparent;
+      float: right;
+    }
+  .stream__load {}
+
+.stream__window {
+  padding-top: 72px; // NEW SPACE
+  transform: translateY(0px);
+}
+
+// NOTIFICATIONS
+//
+
+.stream__alert {
+  position: fixed;
+    top: 8px; left: 50%;
+  margin-left: -160px;
+  width: 320px;
+  z-index: $l2;
+
+  p {
+    background-color: #BDDEFF;
+    margin: 0;
+    text-align: center;
+  }
+}

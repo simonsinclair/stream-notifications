@@ -12,14 +12,28 @@ html {
   box-sizing: inherit;
 }
 body {
+  background-color: #222;
   color: #333;
   font-size: 16px;
   line-height: 22px; // 1.4
+}
+button {
+  border: none;
 }
 
 // PAGE
 //
 
+.page {
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+  width: 320px;
+}
+.flat {
+  display: block;
+}
+
+@import 'stream';
 
 // Utility
 //

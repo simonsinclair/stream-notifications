@@ -4,6 +4,18 @@
 (function(w, $, undefined) {
   'use strict';
 
+  var nextTick = window.requestAnimationFrame ||
+                 window.mozRequestAnimationFrame ||
+                 window.webkitRequestAnimationFrame ||
+                 function (callback) {
+                   window.setTimeout(callback, 1000 / 60);
+                 };
+
+  console.log(nextTick);
+
+  // STREAM
+  //
+
 	var Stream = {
     config: {
 

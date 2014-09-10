@@ -30,7 +30,15 @@
     },
 
     bindEvents: function() {
-      // ...
+      Stream.$loadCta.on('click', Stream.loadNewPosts);
+    },
+
+    loadNewPosts: function(e) {
+      e.preventDefault();
+      $(this).addClass('stream__load--hidden');
+
+      // emit event to say we have the "AJAX" data
+      // then respond by morphing lines, scrolling them in, etc
     }
   };
 

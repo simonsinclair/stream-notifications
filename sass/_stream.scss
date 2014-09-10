@@ -27,7 +27,12 @@ $l2: 20;
   .stream__load {
     display: block;
     margin: 16px auto 24px;
+    opacity: 1;
+    transition: opacity 150ms ease-in;
   }
+    .stream__load--hidden {
+      opacity: 0;
+    }
   .stream__timestamp {
     border-bottom: 1px solid #CCC;
     color: #AAA;
@@ -43,6 +48,10 @@ $l2: 20;
       padding-left: 8px;
     }
   }
+    .stream__timestamp--morphed {
+      padding-right: 120px;
+      padding-left: 120px;
+    }
 
 .stream__window {
   padding-top: 124px; // Safety space

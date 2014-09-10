@@ -46,7 +46,8 @@ $l2: 20;
 
 .stream__window {
   padding-top: 124px; // Safety space
-  transform: translateY(-389px);
+  margin-top: -389px;
+  // transform: translateY(-389px);
 }
 
 // NOTIFICATIONS

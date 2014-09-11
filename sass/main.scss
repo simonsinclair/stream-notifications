@@ -1,6 +1,8 @@
 // main.scss
 //
 
+@import 'animation';
+
 * {
   &,
   &:before,
@@ -15,9 +17,11 @@ body {
   color: #333;
   font-size: 16px;
   line-height: 22px; // 1.4
+  -webkit-font-smoothing: antialiased;
 }
 button {
   border: none;
+  outline: none;
 }
 
 // PAGE

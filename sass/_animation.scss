@@ -1,0 +1,17 @@
+// _animation.scss
+//
+
+@keyframes dayToPostKeyline {
+  to {
+    border-bottom: 1px solid #ECECEC;
+    margin: 6px 190px;
+  }
+}
+
+@keyframes dayNameToNone {
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateX(50%);
+    transform-origin: 60px center;
+  }
+}

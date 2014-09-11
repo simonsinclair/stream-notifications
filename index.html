@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="page">
-      <img class="flat" src="img/lead-in.jpg" alt="" width="320" height="" />
+      <img class="flat" src="img/tc-01.jpg" alt="" width="1024" height="" />
 
       <!-- STREAM -->
       <div class="stream" id="js-stream">
@@ -23,29 +23,26 @@
 
           <!-- TITLE BAR -->
           <div class="stream__title">
-            <strong>Live Reporting</strong>
+            <p><strong>Live Reporting</strong> Birmingham &amp; Black Country</p>
             <button class="stream__settings" id="js-stream-settings">
-              Settings <img src="http://placehold.it/48x48" alt="" />
+              Settings
             </button>
           </div>
 
           <!-- LOAD NEW -->
-          <button class="stream__load" id="js-stream-load">
+          <button class="stream__load stream__load--waiting" id="js-stream-load">
             3 new articles
           </button>
 
-          <p class="relative-stamp">Today</p>
+          <p id="js-stream-day-sep" class="stream__day-sep">
+            <span>Today</span>
+          </p>
         </div>
 
-        <div class="stream__window">
-          <img class="flat" src="img/01.jpg" alt="" width="320" height="" />
-          <img class="flat" src="img/02.jpg" alt="" width="320" height="" />
-          <img class="flat" src="img/03.jpg" alt="" width="320" height="" />
-          <img class="flat" src="img/04.jpg" alt="" width="320" height="" />
+        <div id="js-stream-window" class="stream__window">
+          <img class="flat" src="img/tc-02.jpg" alt="" width="1024" height="" />
         </div>
       </div>
-
-      <img class="flat" src="img/lead-out.jpg" alt="" width="320" height="" />
 
       <!-- NOTIFICATIONS -->
       <div class="stream__alert" id="js-stream-alert">
@@ -55,6 +52,7 @@
 
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/vendor/tiny-pubsub.jquery.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

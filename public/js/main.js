@@ -22,12 +22,23 @@
       Stream.state = 'WAITING';
 
       Stream.bindEvents();
-      setTimeout(Stream.startSimulation, 7000);
       console.log(Stream.state);
     },
 
     bindEvents: function() {
       Stream.$loadCta.on('click', Stream.fetchNewPosts);
+
+      // Shortcut keys
+      $(document).on('keyup', function(e) {
+        switch(e.keyCode) {
+          case 83:
+            Stream.startSimulation();
+            break;
+          default:
+            console.log(e.keyCode);
+        }
+      });
+
       $.subscribe('loadedNewPosts', Stream.onLoadedNewPosts);
     },
 

@@ -8,9 +8,8 @@
   //
 
 	var Stream = {
-    config: {
+    config: {},
 
-    },
     init: function(elemId) {
       Stream.$elem         = $(elemId);
       Stream.$settingsBtn  = $('#js-stream-settings', Stream.$elem);
@@ -22,19 +21,28 @@
       Stream.state = 'WAITING';
 
       Stream.bindEvents();
-      setTimeout(Stream.startSimulation, 7000);
-      console.log(Stream.state);
     },
 
     bindEvents: function() {
       Stream.$loadCta.on('click', Stream.fetchNewPosts);
+
+      // Shortcut keys
+      $(document).on('keyup', function(e) {
+        switch(e.keyCode) {
+          case 83:
+            Stream.startSimulation();
+            break;
+          default:
+            console.log(e.keyCode);
+        }
+      });
+
       $.subscribe('loadedNewPosts', Stream.onLoadedNewPosts);
     },
 
     startSimulation: function() {
       Stream.state = 'STARTED';
       Stream.$loadCta.removeClass('stream__load--waiting');
-      console.log(Stream.state);
     },
 
     fetchNewPosts: function(e) {
@@ -53,7 +61,9 @@
     onLoadedNewPosts: function() {
 
       // Morph Day separator in to a Post separator and then hide it.
-      Stream.$daySep.on('animationend', function() {
+      Stream.$daySep.one('animationend webkitAnimationEnd', function() {
+
+        // Trickery...
         Stream.$daySep.hide();
         showNewPosts();
       });
@@ -61,9 +71,12 @@
 
       // Slide in new posts.
       function showNewPosts() {
+        Stream.$streamWindow.one('animationend webkitAnimationEnd', function() {
+          // Stream.$daySep.show();
+          console.log('Fix me!');
+        });
         Stream.$streamWindow.addClass('stream__window--top');
         Stream.state = 'ENDED';
-        console.log(Stream.state);
       }
     }
   };

@@ -109,7 +109,7 @@ $l2: 20;
 
 .stream__window {
   padding-top: 124px; // Safety space
-  // margin-top: -403px;
+  margin-top: -421px;
   transition: margin-top 450ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
   .stream__window--top {
@@ -155,8 +155,9 @@ $l2: 20;
     }
   }
   .post__primary {
+    border-bottom: 1px solid #EAEAEA;
     float: left;
-    width: 750px;
+    width: 640px;
   }
     .post__title {
       color: #767676;

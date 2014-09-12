@@ -61,7 +61,9 @@
     onLoadedNewPosts: function() {
 
       // Morph Day separator in to a Post separator and then hide it.
-      Stream.$daySep.on('animationend', function() {
+      Stream.$daySep.one('animationend webkitAnimationEnd', function() {
+
+        // Trickery...
         Stream.$daySep.hide();
         showNewPosts();
       });
@@ -69,6 +71,10 @@
 
       // Slide in new posts.
       function showNewPosts() {
+        Stream.$streamWindow.one('animationend webkitAnimationEnd', function() {
+          // Stream.$daySep.show();
+          console.log('Fix me!');
+        });
         Stream.$streamWindow.addClass('stream__window--top');
         Stream.state = 'ENDED';
       }

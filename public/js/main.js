@@ -8,9 +8,8 @@
   //
 
 	var Stream = {
-    config: {
+    config: {},
 
-    },
     init: function(elemId) {
       Stream.$elem         = $(elemId);
       Stream.$settingsBtn  = $('#js-stream-settings', Stream.$elem);
@@ -22,7 +21,6 @@
       Stream.state = 'WAITING';
 
       Stream.bindEvents();
-      console.log(Stream.state);
     },
 
     bindEvents: function() {
@@ -45,7 +43,6 @@
     startSimulation: function() {
       Stream.state = 'STARTED';
       Stream.$loadCta.removeClass('stream__load--waiting');
-      console.log(Stream.state);
     },
 
     fetchNewPosts: function(e) {
@@ -74,7 +71,6 @@
       function showNewPosts() {
         Stream.$streamWindow.addClass('stream__window--top');
         Stream.state = 'ENDED';
-        console.log(Stream.state);
       }
     }
   };
